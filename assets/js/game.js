@@ -19,11 +19,14 @@ var battle = {
             battle.opponent.status = 'dead';
             $("#" + battle.opponent.name).remove();
             if(battle.conqueredOps < 5){
-                $('#UHS').html('<h3>You Win, pick another opponent</h3>').delay( 1000 ).empty();
-                $('#OHS').empty();
+                $('#UHS').html('<h3>You Win, pick another opponent</h3>');
                 $("#userMessage").html("Select an opponent");
-                $("#arena").fadeOut(1000);
-                $("#available-players").fadeIn(2000);
+                setTimeout(()=>{
+                    $('#OHS #UHS').empty();
+                    $("#arena").fadeOut(1000);
+                    $("#available-players").fadeIn(2000);
+                }, 1500);
+                
                 
                 
             }
@@ -32,19 +35,25 @@ var battle = {
             }
             
         }
-        else if(battle.userPlayer.healthPoints <= 0){
-            // You're dead sucka!
-
-        }
+        // else if(battle.userPlayer.healthPoints <= 0){
+        //     // You're dead sucka!
+        //     console.log('RIP ' + battle.userPlayer.name);
+        // }
         else{battle.counterStrike();}
-        console.log('Oponnent Status: ' + battle.opponent.status);
+        console.log('Opponent Status: ' + battle.opponent.status);
         
     },
     counterStrike: ()=>{
         
         battle.userPlayer.healthPoints -= battle.opponent.attackPower;
         console.log("Your Health: " + battle.userPlayer.healthPoints);
-        battle.userPlayer.statusCheck();
+        if(battle.userPlayer.healthPoints <= 0){
+            console.log('RIP ' + battle.userPlayer.name);
+            $('#scoreboard').empty().html("<h2>Game Over</h2><br><button class='btn btn-success' onclick='reload()'>Start Over?</button>");
+
+            // $('#scoreboard')
+
+        }
         // Post some numbers on the scoreboard
         $('#UHS').html('<h3>' + battle.userPlayer.healthPoints + '</h3>');
     }
@@ -111,6 +120,7 @@ function toggleActionBtn(){
 function buildScoreBoard(){
     let scoreboard = $('<div>');
     scoreboard.attr('class', 'col-4 text-center');
+    scoreboard.attr('id', 'scoreboard');
     let userHealth = $('<div>');
     userHealth.attr('id', 'userHealth');
     userHealth.append('<h3>Your Health: </h3>');
@@ -128,4 +138,8 @@ function buildScoreBoard(){
     scoreboard.append(oppHealth);
 
     return scoreboard;
+}
+
+function reload(){
+    setTimeout(()=>{location.reload(true)}, 1500);
 }
