@@ -11,12 +11,21 @@ var battle = {
     userStrike: ()=>{
         battle.opponent.healthPoints -= battle.userPlayer.attackPower;
         console.log("Opponent Health: " + battle.opponent.healthPoints);
-        battle.userPlayer.incrementAttack();
-        battle.counterStrike();
+        battle.userPlayer.attackPower += battle.userPlayer.attackMultiplier;
+        if(battle.opponent.healthPoints < 0){
+            // Its over
+            battle.conqueredOps++;
+            battle.opponent.status = 'dead';
+            $("#" + battle.opponent.name).remove();
+        }
+        else{battle.counterStrike();}
+        console.log('Oponnent Status: ' + battle.opponent.status);
+        
     },
     counterStrike: ()=>{
         battle.userPlayer.healthPoints -= battle.opponent.attackPower;
         console.log("Your Health: " + battle.userPlayer.healthPoints);
+        battle.userPlayer.statusCheck();
     }
 };
 
@@ -42,7 +51,7 @@ const playerSelect = function(playerName){
         // Fade this in later
         $('#arena').hide();
         $("#arena").append(battle.userPlayer.card);
-
+        $("#arena").append(buildScoreBoard());
         // Change all other user buttons
         $(".btn-primary").addClass('btn-danger');
         $(".btn-primary").attr('onclick', $('btn-primary').attr('player'));
@@ -69,7 +78,8 @@ const oppSelect = function (oppName){
     $("#" + oppName).remove();
     // Fade this in later
     $("#arena").append(battle.opponent.card);
-    $('#arena').show();
+    $('#available-players').fadeOut(1000);
+    $('#arena').fadeIn(1700);
 }
 
 function toggleActionBtn(){
@@ -77,3 +87,24 @@ function toggleActionBtn(){
     console.log(name);
 }
 
+function buildScoreBoard(){
+    let scoreboard = $('<div>');
+    scoreboard.attr('class', 'col-4 text-center');
+    let userHealth = $('<div>');
+    userHealth.attr('id', 'userHealth');
+    userHealth.append('<h3>Your Health: </h3>');
+    let userHealthScore = $('<div>');
+    userHealthScore.attr('id', 'UHS');
+    userHealth.append(userHealthScore);
+    let oppHealth = $('<div>');
+    oppHealth.attr('id', 'oppHealth');
+    oppHealth.append('<h3>Opponent\'s Health: </h3>');
+    let oppHealthScore = $('<div>');
+    oppHealthScore.attr('id', 'OHS');
+    oppHealth.append(oppHealthScore);
+    scoreboard.append(userHealth);
+    scoreboard.append('<br>')
+    scoreboard.append(oppHealth);
+
+    return scoreboard;
+}

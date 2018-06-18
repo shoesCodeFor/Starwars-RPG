@@ -16,7 +16,7 @@
     <h1 id="title" class="text-center">STARWARS - Darkspace Battles</h1>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12" id="available-players">
+            <div class="col-12 text-center" id="available-players">
                 <h3>Players: <span id="userMessage">Select your Player</span></h3>
                 <div class="row">
                     <div class="col-4" id="Vader">
@@ -24,7 +24,7 @@
                             <img class="card-img-top" src="assets/images/vader.jpg" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Vader</h5>
-                              <a id="VaderAction" href="#" class="btn btn-primary" onclick="playerSelect('Vader')" player="Vader">Select</a>
+                              <a id="VaderAction" href="#userMessage" class="btn btn-primary" onclick="playerSelect('Vader')" player="Vader">Select</a>
                             </div>
                           </div>
                     </div>
@@ -33,7 +33,7 @@
                             <img class="card-img-top" src="assets/images/clone.jpg" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Clone</h5>
-                              <a id="CloneAction" href="#" class="btn btn-primary" onclick="playerSelect('Clone')" player="Clone">Select</a>
+                              <a id="CloneAction" href="#userMessage" class="btn btn-primary" onclick="playerSelect('Clone')" player="Clone">Select</a>
                             </div>
                           </div>
                     </div>
@@ -42,7 +42,7 @@
                             <img class="card-img-top" src="assets/images/dooku.jpg" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Dooku</h5>
-                              <a id="DookuAction" href="#" class="btn btn-primary" onclick="playerSelect('Dooku')" player="Dooku">Select</a>
+                              <a id="DookuAction" href="#userMessage" class="btn btn-primary" onclick="playerSelect('Dooku')" player="Dooku">Select</a>
                             </div>
                           </div>
                     </div>
@@ -51,7 +51,7 @@
                             <img class="card-img-top" src="assets/images/yoda.jpg" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Yoda</h5>
-                              <a id="YodaAction" href="#" class="btn btn-primary" onclick="playerSelect('Yoda')" player="Yoda">Select</a>
+                              <a id="YodaAction" href="#userMessage" class="btn btn-primary" onclick="playerSelect('Yoda')" player="Yoda">Select</a>
                             </div>
                           </div>
                     </div>
@@ -60,7 +60,7 @@
                             <img class="card-img-top" src="assets/images/obi.jpg" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Obi-Wan</h5>
-                              <a id="Obi-WanAction" href="#" class="btn btn-primary action" onclick="playerSelect('Obi-Wan')" player="Obi-Wan">Select</a>
+                              <a id="Obi-WanAction" href="#userMessage" class="btn btn-primary action" onclick="playerSelect('Obi-Wan')" player="Obi-Wan">Select</a>
                             </div>
                           </div>
                     </div>
@@ -69,22 +69,23 @@
                             <img class="card-img-top" src="assets/images/luke.jpg" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Luke</h5>
-                              <a id="LukeAction" href="#" class="btn btn-primary action" onclick="playerSelect('Luke')" player="Luke">Select</a>
+                              <a id="LukeAction" href="#userMessage" class="btn btn-primary action" onclick="playerSelect('Luke')" player="Luke">Select</a>
                             </div>
                           </div>
                     </div>
-                    
                 </div>
-                
             </div>
         </div>
-        <div class="row" id="arena">
+        <div class="row align-content-center" id="arena">
 
         </div>
     </div>
 
     <footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
