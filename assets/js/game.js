@@ -11,21 +11,42 @@ var battle = {
     userStrike: ()=>{
         battle.opponent.healthPoints -= battle.userPlayer.attackPower;
         console.log("Opponent Health: " + battle.opponent.healthPoints);
+        $('#OHS').html('<h3>' + battle.opponent.healthPoints + '</h3>');
         battle.userPlayer.attackPower += battle.userPlayer.attackMultiplier;
-        if(battle.opponent.healthPoints < 0){
-            // Its over
+        if(battle.opponent.healthPoints < 0 && battle.userPlayer.healthPoints > 0){
+            // Its over, you win
             battle.conqueredOps++;
             battle.opponent.status = 'dead';
             $("#" + battle.opponent.name).remove();
+            if(battle.conqueredOps < 5){
+                $('#UHS').html('<h3>You Win, pick another opponent</h3>').delay( 1000 ).empty();
+                $('#OHS').empty();
+                $("#userMessage").html("Select an opponent");
+                $("#arena").fadeOut(1000);
+                $("#available-players").fadeIn(2000);
+                
+                
+            }
+            else{
+                $('#UHS').html('<h3>You beat the game! There is nobody left...</h3>');
+            }
+            
+        }
+        else if(battle.userPlayer.healthPoints <= 0){
+            // You're dead sucka!
+
         }
         else{battle.counterStrike();}
         console.log('Oponnent Status: ' + battle.opponent.status);
         
     },
     counterStrike: ()=>{
+        
         battle.userPlayer.healthPoints -= battle.opponent.attackPower;
         console.log("Your Health: " + battle.userPlayer.healthPoints);
         battle.userPlayer.statusCheck();
+        // Post some numbers on the scoreboard
+        $('#UHS').html('<h3>' + battle.userPlayer.healthPoints + '</h3>');
     }
 };
 
