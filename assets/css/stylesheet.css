@@ -12,13 +12,18 @@ body{
     /* background-image: url(../images/battlefront-background.jpg); */
 }
 
-#title{
-    font-size: 5vw;
-}
-.btn-primary{
+
+.btn-primary, .btn-danger{
     font-size: 2vw;
     padding: .375rem 1vw;
 }
 .card-title{
     font-size:4vw;
+}
+
+#title{
+    font-size: 5vw;
+}
+.red-text{
+    color:red;
 }

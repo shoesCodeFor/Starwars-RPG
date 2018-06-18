@@ -16,66 +16,70 @@
     <h1 id="title" class="text-center">STARWARS - Darkspace Battles</h1>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12" id="player-">
-                <h3>Players:</h3>
+            <div class="col-12" id="available-players">
+                <h3>Players: <span id="userMessage">Select your Player</span></h3>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-4" id="Vader">
                         <div class="card text-center">
                             <img class="card-img-top" src="assets/images/vader.jpg" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Vader</h5>
-                              <a href="#" class="btn btn-primary">Select Player</a>
+                              <a id="VaderAction" href="#" class="btn btn-primary" onclick="playerSelect('Vader')" player="Vader">Select</a>
                             </div>
                           </div>
                     </div>
-                    <div class="col-4">
-                        <div class="card text-center">
-                            <img class="card-img-top" src="assets/images/yoda.jpg" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">Yoda</h5>
-                              <a href="#" class="btn btn-primary">Select Player</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card text-center">
-                            <img class="card-img-top" src="assets/images/obi.jpg" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">Obi-Wan</h5>
-                              <a href="#" class="btn btn-primary">Select Player</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card text-center">
-                            <img class="card-img-top" src="assets/images/luke.jpg" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">Luke</h5>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-4">
+                    <div class="col-4" id="Clone">
                         <div class="card text-center">
                             <img class="card-img-top" src="assets/images/clone.jpg" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Clone</h5>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                              <a id="CloneAction" href="#" class="btn btn-primary" onclick="playerSelect('Clone')" player="Clone">Select</a>
                             </div>
                           </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" id="Dooku">
                         <div class="card text-center">
                             <img class="card-img-top" src="assets/images/dooku.jpg" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">Dooku</h5>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                              <a id="DookuAction" href="#" class="btn btn-primary" onclick="playerSelect('Dooku')" player="Dooku">Select</a>
                             </div>
                           </div>
                     </div>
+                    <div class="col-4" id="Yoda">
+                        <div class="card text-center">
+                            <img class="card-img-top" src="assets/images/yoda.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Yoda</h5>
+                              <a id="YodaAction" href="#" class="btn btn-primary" onclick="playerSelect('Yoda')" player="Yoda">Select</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-4" id="Obi-Wan">
+                        <div class="card text-center">
+                            <img class="card-img-top" src="assets/images/obi.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Obi-Wan</h5>
+                              <a id="Obi-WanAction" href="#" class="btn btn-primary action" onclick="playerSelect('Obi-Wan')" player="Obi-Wan">Select</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-4" id="Luke">
+                        <div class="card text-center">
+                            <img class="card-img-top" src="assets/images/luke.jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Luke</h5>
+                              <a id="LukeAction" href="#" class="btn btn-primary action" onclick="playerSelect('Luke')" player="Luke">Select</a>
+                            </div>
+                          </div>
+                    </div>
+                    
                 </div>
-                <p>Select a Player</p>
+                
             </div>
+        </div>
+        <div class="row" id="arena">
+
         </div>
     </div>
 
