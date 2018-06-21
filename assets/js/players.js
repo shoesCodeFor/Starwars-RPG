@@ -4,8 +4,8 @@ var players = [
      role:'player', //Player or Opponent
      status: 'alive',
      healthPoints:180,
-     attackPower:10,
-     attackMultiplier:10,
+     attackPower:8,
+     attackMultiplier:8,
      counterAttack: this.attackMultiplier,
      incrementAttack: ()=>{
         this.attackPower += this.attackMultiplier
@@ -26,8 +26,8 @@ var players = [
      role:'player', //Player or Opponent
      status: 'alive',
      healthPoints:70,
-     attackPower:4,
-     attackMultiplier:4,
+     attackPower:2,
+     attackMultiplier:2,
      counterAttack: this.attackMultiplier,
      incrementAttack: ()=>{
         this.attackPower += this.attackMultiplier
@@ -70,8 +70,8 @@ var players = [
      role:'player', //Player or Opponent
      status: 'alive',
      healthPoints:220,
-     attackPower:8,
-     attackMultiplier:8,
+     attackPower:6,
+     attackMultiplier:6,
      counterAttack: this.attackMultiplier,
      incrementAttack: ()=>{
         this.attackPower += this.attackMultiplier
@@ -114,8 +114,8 @@ var players = [
      role:'player', //Player or Opponent
      status: 'alive',
      healthPoints:170,
-     attackPower:11,
-     attackMultiplier:11,
+     attackPower:10,
+     attackMultiplier:10,
      counterAttack: this.attackMultiplier,
      incrementAttack: ()=>{
         this.attackPower += this.attackMultiplier
