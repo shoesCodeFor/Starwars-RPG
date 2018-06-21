@@ -50,7 +50,7 @@ var battle = {
         console.log("Your Health: " + battle.userPlayer.healthPoints);
         if(battle.userPlayer.healthPoints <= 0){
             console.log('RIP ' + battle.userPlayer.name);
-            $('#scoreboard').empty().html("<h2>Game Over</h2><br><button class='btn btn-success' onclick='reload()'>Start Over?</button>");
+            $('#scoreboard').empty().html("<h2>Game Over....You're Dead</h2><br><button class='btn btn-success' onclick='reload()'>Start Over?</button>");
 
             // $('#scoreboard')
 
