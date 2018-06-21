@@ -32,6 +32,7 @@ var battle = {
             }
             else{
                 $('#UHS').html('<h3>You beat the game! There is nobody left...</h3>');
+                $('#oppHealth').html("<h2>Try winning with the clone :)</h2><br><button class='btn btn-success' onclick='reload()'>Start Over?</button>");
             }
             
         }
@@ -109,6 +110,8 @@ const oppSelect = function (oppName){
     // Fade this in later
     $("#arena").append(battle.opponent.card);
     $('#available-players').fadeOut(1000);
+    $('#OHS').empty();
+    $('#UHS').empty();
     $('#arena').fadeIn(1700);
 }
 

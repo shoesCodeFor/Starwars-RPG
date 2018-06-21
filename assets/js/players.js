@@ -4,8 +4,8 @@ var players = [
      role:'player', //Player or Opponent
      status: 'alive',
      healthPoints:180,
-     attackPower:12,
-     attackMultiplier:12,
+     attackPower:10,
+     attackMultiplier:10,
      counterAttack: this.attackMultiplier,
      incrementAttack: ()=>{
         this.attackPower += this.attackMultiplier
@@ -25,7 +25,7 @@ var players = [
     {name: "Clone",
      role:'player', //Player or Opponent
      status: 'alive',
-     healthPoints:50,
+     healthPoints:70,
      attackPower:4,
      attackMultiplier:4,
      counterAttack: this.attackMultiplier,
@@ -47,9 +47,9 @@ var players = [
     {name: "Dooku",
      role:'player', //Player or Opponent
      status: 'alive',
-     healthPoints:160,
-     attackPower:16,
-     attackMultiplier:16,
+     healthPoints:130,
+     attackPower:12,
+     attackMultiplier:12,
      counterAttack: this.attackMultiplier,
      incrementAttack: ()=>{
         this.attackPower += this.attackMultiplier
@@ -91,9 +91,9 @@ var players = [
     {name: "Obi-Wan",
      role:'player', //Player or Opponent
      status: 'alive',
-     healthPoints:130,
-     attackPower:10,
-     attackMultiplier:10,
+     healthPoints:140,
+     attackPower:7,
+     attackMultiplier:7,
      counterAttack: this.attackMultiplier,
      incrementAttack: ()=>{
         this.attackPower += this.attackMultiplier
@@ -114,8 +114,8 @@ var players = [
      role:'player', //Player or Opponent
      status: 'alive',
      healthPoints:170,
-     attackPower:16,
-     attackMultiplier:16,
+     attackPower:11,
+     attackMultiplier:11,
      counterAttack: this.attackMultiplier,
      incrementAttack: ()=>{
         this.attackPower += this.attackMultiplier
